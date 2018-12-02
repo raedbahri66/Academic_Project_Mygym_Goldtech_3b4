@@ -100,7 +100,8 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_projet4_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) function.$(OBJEXT)
+	interface.$(OBJEXT) callbacks.$(OBJEXT) \
+	function_admin.$(OBJEXT)
 projet4_OBJECTS = $(am_projet4_OBJECTS)
 am__DEPENDENCIES_1 =
 projet4_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -282,7 +283,7 @@ projet4_SOURCES = \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	function.c function.h
+	function_admin.c function_admin.h
 
 projet4_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 all: all-am
@@ -372,7 +373,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/function.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/function_admin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/support.Po@am__quote@

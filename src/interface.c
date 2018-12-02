@@ -107,7 +107,7 @@ create_admin (void)
   GtkWidget *entry43;
   GtkWidget *button33;
   GtkWidget *label411;
-  GtkWidget *button40;
+  GtkWidget *label538;
   GtkWidget *fixed5;
   GtkWidget *notebook4;
   GtkWidget *fixed13;
@@ -710,9 +710,9 @@ create_admin (void)
   gtk_widget_show (label411);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook3), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook3), 3), label411);
 
-  button40 = gtk_button_new_with_mnemonic (_("Admin"));
-  gtk_widget_show (button40);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook1), 0), button40);
+  label538 = gtk_label_new (_("Admin"));
+  gtk_widget_show (label538);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook1), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook1), 0), label538);
 
   fixed5 = gtk_fixed_new ();
   gtk_widget_show (fixed5);
@@ -1932,7 +1932,7 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, entry43, "entry43");
   GLADE_HOOKUP_OBJECT (admin, button33, "button33");
   GLADE_HOOKUP_OBJECT (admin, label411, "label411");
-  GLADE_HOOKUP_OBJECT (admin, button40, "button40");
+  GLADE_HOOKUP_OBJECT (admin, label538, "label538");
   GLADE_HOOKUP_OBJECT (admin, fixed5, "fixed5");
   GLADE_HOOKUP_OBJECT (admin, notebook4, "notebook4");
   GLADE_HOOKUP_OBJECT (admin, fixed13, "fixed13");

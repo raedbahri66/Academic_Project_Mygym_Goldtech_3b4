@@ -100,7 +100,8 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_projet4_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) function.$(OBJEXT)
+	interface.$(OBJEXT) callbacks.$(OBJEXT) \
+	function_admin.$(OBJEXT)
 projet4_OBJECTS = $(am_projet4_OBJECTS)
 am__DEPENDENCIES_1 =
 projet4_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -160,12 +161,12 @@ ETAGS = etags
 CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/raed/Bureau/projet4/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/raed/Bureau/mygym_goldtech_3b4/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/raed/Bureau/projet4/missing autoconf
-AUTOHEADER = ${SHELL} /home/raed/Bureau/projet4/missing autoheader
-AUTOMAKE = ${SHELL} /home/raed/Bureau/projet4/missing automake-1.15
+AUTOCONF = ${SHELL} /home/raed/Bureau/mygym_goldtech_3b4/missing autoconf
+AUTOHEADER = ${SHELL} /home/raed/Bureau/mygym_goldtech_3b4/missing autoheader
+AUTOMAKE = ${SHELL} /home/raed/Bureau/mygym_goldtech_3b4/missing automake-1.15
 AWK = mawk
 CATALOGS = 
 CATOBJEXT = .gmo
@@ -200,7 +201,7 @@ LIBOBJS =
 LIBS = 
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} /home/raed/Bureau/projet4/missing makeinfo
+MAKEINFO = ${SHELL} /home/raed/Bureau/mygym_goldtech_3b4/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
 MSGFMT = /usr/bin/msgfmt
@@ -229,10 +230,10 @@ STRIP =
 USE_NLS = yes
 VERSION = 0.1
 XGETTEXT = /usr/bin/xgettext
-abs_builddir = /home/raed/Bureau/projet4/src
-abs_srcdir = /home/raed/Bureau/projet4/src
-abs_top_builddir = /home/raed/Bureau/projet4
-abs_top_srcdir = /home/raed/Bureau/projet4
+abs_builddir = /home/raed/Bureau/mygym_goldtech_3b4/src
+abs_srcdir = /home/raed/Bureau/mygym_goldtech_3b4/src
+abs_top_builddir = /home/raed/Bureau/mygym_goldtech_3b4
+abs_top_srcdir = /home/raed/Bureau/mygym_goldtech_3b4
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -251,7 +252,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/raed/Bureau/projet4/install-sh
+install_sh = ${SHELL} /home/raed/Bureau/mygym_goldtech_3b4/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -282,7 +283,7 @@ projet4_SOURCES = \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	function.c function.h
+	function_admin.c function_admin.h
 
 projet4_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
 all: all-am
@@ -372,7 +373,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 include ./$(DEPDIR)/callbacks.Po
-include ./$(DEPDIR)/function.Po
+include ./$(DEPDIR)/function_admin.Po
 include ./$(DEPDIR)/interface.Po
 include ./$(DEPDIR)/main.Po
 include ./$(DEPDIR)/support.Po

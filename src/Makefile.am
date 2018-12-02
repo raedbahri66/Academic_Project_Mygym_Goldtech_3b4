@@ -12,7 +12,7 @@ projet4_SOURCES = \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	function.c function.h
+	function_admin.c function_admin.h
 
 projet4_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 

@@ -331,9 +331,9 @@ create_admin (void)
   GtkWidget *treeview2;
   GtkWidget *entry69;
   GtkWidget *label537;
-  GtkWidget *button60;
   GtkWidget *button61;
   GtkWidget *button59;
+  GtkWidget *button60;
   GtkWidget *label536;
 
   admin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
@@ -1800,11 +1800,6 @@ create_admin (void)
   gtk_fixed_put (GTK_FIXED (fixed68), label537, 488, 144);
   gtk_widget_set_size_request (label537, 112, 32);
 
-  button60 = gtk_button_new_with_mnemonic (_("Accepter\n"));
-  gtk_widget_show (button60);
-  gtk_fixed_put (GTK_FIXED (fixed68), button60, 808, 144);
-  gtk_widget_set_size_request (button60, 120, 32);
-
   button61 = gtk_button_new_with_mnemonic (_("Refuser"));
   gtk_widget_show (button61);
   gtk_fixed_put (GTK_FIXED (fixed68), button61, 816, 192);
@@ -1814,6 +1809,11 @@ create_admin (void)
   gtk_widget_show (button59);
   gtk_fixed_put (GTK_FIXED (fixed68), button59, 560, 64);
   gtk_widget_set_size_request (button59, 152, 32);
+
+  button60 = gtk_button_new_with_mnemonic (_("Accepter\n"));
+  gtk_widget_show (button60);
+  gtk_fixed_put (GTK_FIXED (fixed68), button60, 808, 144);
+  gtk_widget_set_size_request (button60, 120, 32);
 
   label536 = gtk_label_new (_("Demande d'inscription"));
   gtk_widget_show (label536);
@@ -1854,6 +1854,9 @@ create_admin (void)
                     NULL);
   g_signal_connect ((gpointer) button59, "clicked",
                     G_CALLBACK (on_button59_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) button60, "clicked",
+                    G_CALLBACK (on_button60_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -2141,9 +2144,9 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, treeview2, "treeview2");
   GLADE_HOOKUP_OBJECT (admin, entry69, "entry69");
   GLADE_HOOKUP_OBJECT (admin, label537, "label537");
-  GLADE_HOOKUP_OBJECT (admin, button60, "button60");
   GLADE_HOOKUP_OBJECT (admin, button61, "button61");
   GLADE_HOOKUP_OBJECT (admin, button59, "button59");
+  GLADE_HOOKUP_OBJECT (admin, button60, "button60");
   GLADE_HOOKUP_OBJECT (admin, label536, "label536");
 
   return admin;

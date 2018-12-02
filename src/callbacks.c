@@ -7,7 +7,7 @@
 #include "support.h"
 #include "callbacks.h"
 #include <string.h>
-#include "function.h"
+#include "function_admin.h"
 
 void
 on_button25_clicked                    (GtkWidget       *objet_graphique,
