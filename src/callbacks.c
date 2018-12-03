@@ -189,9 +189,31 @@ gtk_widget_show(admin);
 }
 else if(z==2)
 {
+
+GtkWidget *output,*output1,*output2;
+output=lookup_widget(objet_graphique,"label539");
+output1=lookup_widget(objet_graphique,"label540");
+output2=lookup_widget(objet_graphique,"label541");
+adherant a;
+FILE*f1;
+f1=fopen("adherant.txt","r");
+ if (f1!=NULL)
+ {
+ while(fscanf(f1,"%s %s %s %s %d %d %d %s %s %s %s %s      %d\n",a.login,a.password,a.nom,a.prenom,&a.dt_nais.jour,&a.dt_nais.mois,&a.dt_nais.annee,a.sexe,a.adresse,a.phone,a.email,a.choixactiv,&a.valid)!=EOF)
+ {
+ if(strcmp(login,a.login)==0)
+ {
+ gtk_label_set_text(GTK_LABEL(output),a.prenom);
+ gtk_label_set_text(GTK_LABEL(output1),a.nom);
+ gtk_label_set_text(GTK_LABEL(output2),a.password);
+
+}
+}
+}
 adherent1= create_adherent1 ();
 gtk_widget_show(adherent1);
 }
+
 else if(z==0)
 {
 adherantnotvalid= create_adherantnotvalid ();

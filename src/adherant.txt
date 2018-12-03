@@ -1,1 +1,3 @@
-11394145 raed1992 raed bahri 12 12 1992 Homme  tunis 55034128 raed@mail.com Choix2 0 
+123456 12345 ayed aymen 11 12 1960 Femme nabeul 2030625 dahdia Choix3 2 
+123456 12345 ayed aymen 11 12 1960 Femme nabeul 2030625 dahdia@ Choix3 2 
+09853835 ayed01 aymen ayed 19 11 1996 Homme nabeul 20146637 aymen.ayed@esprit.tn Choix1 2 

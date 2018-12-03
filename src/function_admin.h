@@ -15,7 +15,7 @@ Date dt_nais;
 char sexe[20];
 char adresse[20];
 char phone[20];
-char email[20];
+char email[50];
 int role;
 }admin;
 
@@ -29,7 +29,7 @@ Date dt_nais;
 char sexe[20];
 char adresse[20];
 char phone[20];
-char email[20];
+char email[50];
 char choixactiv[20];
 int valid;
 }adherant;

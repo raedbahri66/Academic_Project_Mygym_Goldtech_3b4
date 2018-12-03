@@ -2163,10 +2163,10 @@ create_adherent1 (void)
   GtkWidget *button42;
   GtkWidget *label418;
   GtkWidget *label420;
-  GtkWidget *label419;
-  GtkWidget *label421;
   GtkWidget *label422;
-  GtkWidget *label423;
+  GtkWidget *label540;
+  GtkWidget *label541;
+  GtkWidget *label539;
   GtkWidget *label414;
   GtkWidget *fixed47;
   GtkWidget *label415;
@@ -2232,25 +2232,25 @@ create_adherent1 (void)
   gtk_fixed_put (GTK_FIXED (fixed45), label420, 40, 128);
   gtk_widget_set_size_request (label420, 96, 40);
 
-  label419 = gtk_label_new (_("label419"));
-  gtk_widget_show (label419);
-  gtk_fixed_put (GTK_FIXED (fixed45), label419, 352, 56);
-  gtk_widget_set_size_request (label419, 128, 32);
-
-  label421 = gtk_label_new (_("label421"));
-  gtk_widget_show (label421);
-  gtk_fixed_put (GTK_FIXED (fixed45), label421, 376, 120);
-  gtk_widget_set_size_request (label421, 88, 32);
-
   label422 = gtk_label_new (_("Date d' expiration de l' abonnement"));
   gtk_widget_show (label422);
   gtk_fixed_put (GTK_FIXED (fixed45), label422, 48, 224);
   gtk_widget_set_size_request (label422, 256, 56);
 
-  label423 = gtk_label_new (_("label423"));
-  gtk_widget_show (label423);
-  gtk_fixed_put (GTK_FIXED (fixed45), label423, 360, 224);
-  gtk_widget_set_size_request (label423, 128, 32);
+  label540 = gtk_label_new (_("label540"));
+  gtk_widget_show (label540);
+  gtk_fixed_put (GTK_FIXED (fixed45), label540, 272, 120);
+  gtk_widget_set_size_request (label540, 96, 25);
+
+  label541 = gtk_label_new (_("label541"));
+  gtk_widget_show (label541);
+  gtk_fixed_put (GTK_FIXED (fixed45), label541, 328, 240);
+  gtk_widget_set_size_request (label541, 129, 25);
+
+  label539 = gtk_label_new (_("label539"));
+  gtk_widget_show (label539);
+  gtk_fixed_put (GTK_FIXED (fixed45), label539, 248, 56);
+  gtk_widget_set_size_request (label539, 128, 32);
 
   label414 = gtk_label_new (_("Acceuil"));
   gtk_widget_show (label414);
@@ -2387,10 +2387,10 @@ create_adherent1 (void)
   GLADE_HOOKUP_OBJECT (adherent1, button42, "button42");
   GLADE_HOOKUP_OBJECT (adherent1, label418, "label418");
   GLADE_HOOKUP_OBJECT (adherent1, label420, "label420");
-  GLADE_HOOKUP_OBJECT (adherent1, label419, "label419");
-  GLADE_HOOKUP_OBJECT (adherent1, label421, "label421");
   GLADE_HOOKUP_OBJECT (adherent1, label422, "label422");
-  GLADE_HOOKUP_OBJECT (adherent1, label423, "label423");
+  GLADE_HOOKUP_OBJECT (adherent1, label540, "label540");
+  GLADE_HOOKUP_OBJECT (adherent1, label541, "label541");
+  GLADE_HOOKUP_OBJECT (adherent1, label539, "label539");
   GLADE_HOOKUP_OBJECT (adherent1, label414, "label414");
   GLADE_HOOKUP_OBJECT (adherent1, fixed47, "fixed47");
   GLADE_HOOKUP_OBJECT (adherent1, label415, "label415");
