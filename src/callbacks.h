@@ -87,3 +87,27 @@ on_button60_clicked                    (GtkWidget       *objet_graphique,
 void
 on_adherent1_activate_default          (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+void
+on_button62_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button63_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button64_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button65_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button66_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button67_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);

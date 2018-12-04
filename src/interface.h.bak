@@ -5,6 +5,6 @@
 GtkWidget* create_admin (void);
 GtkWidget* create_adherent1 (void);
 GtkWidget* create_home (void);
-GtkWidget* create_coach (void);
 GtkWidget* create_adherantnotvalid (void);
 GtkWidget* create_error (void);
+GtkWidget* create_Coach (void);
