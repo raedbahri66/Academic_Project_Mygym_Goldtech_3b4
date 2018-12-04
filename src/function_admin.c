@@ -13,10 +13,10 @@ FILE*f3;//staffs medicaux
 
 int d=1,b=1,c=-1;
 
-f=fopen("admin.txt","r");
-f1=fopen("adherant.txt","r");
-f2=fopen("coach.txt","r");
-f3=fopen("staffs.txt","r");
+f=fopen("src/admin.txt","r");
+f1=fopen("src/adherant.txt","r");
+f2=fopen("src/coach.txt","r");
+f3=fopen("src/staffs.txt","r");
 admin s;
 adherant a;
 if(f !=NULL) {
@@ -50,7 +50,7 @@ void ajouter (admin s)
 {
 s.role=1;
 FILE*f;
-f=fopen("admin.txt","a+");
+f=fopen("src/admin.txt","a+");
 if (f!=NULL)
 {
 fprintf(f,"%s %s %s %s %d %d %d %s %s %s %s %d\n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,s.role);
@@ -62,7 +62,7 @@ void ajouter_adherant (adherant s)
 {
 
 FILE*f;
-f=fopen("adherant.txt","a+");
+f=fopen("src/adherant.txt","a+");
 if (f!=NULL)
 {
 fprintf(f,"%s %s %s %s %d %d %d %s %s %s %s %s %d \n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,s.choixactiv,s.valid);
@@ -77,8 +77,8 @@ admin s;
 FILE*f;
 FILE*f1;
 int test=-1;
-f=fopen("admin.txt","r");
-f1=fopen("fichier.txt","a+");
+f=fopen("src/admin.txt","r");
+f1=fopen("src/fichier.txt","a+");
 while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %d\n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,&s.role)!=EOF)
 {
 if(strcmp(loginadmin,s.login)!=0)
@@ -92,8 +92,8 @@ test=1;
 }
 fclose(f);
 fclose(f1);
-remove("admin.txt");
-rename("fichier.txt","admin.txt");
+remove("src/admin.txt");
+rename("src/fichier.txt","src/admin.txt");
 return(test);
 }
 ////////////////////////////////////////////////
@@ -102,8 +102,8 @@ void memoriser(char login[])
 int retour=-1;
 FILE*f;
 FILE*f1;
-f=fopen("login.txt","a+");
-f1=fopen("fichier.txt","a+");
+f=fopen("src/login.txt","a+");
+f1=fopen("src/fichier.txt","a+");
 if (f1!=NULL)
 {
 fprintf(f1,"%s \n",login);
@@ -111,8 +111,8 @@ fclose(f1);
 }
   fclose(f);
 
-  remove("login.txt");
-  rename("fichier.txt","login.txt");
+  remove("src/login.txt");
+  rename("src/fichier.txt","src/login.txt");
 return(retour);
 }
 
@@ -123,24 +123,24 @@ admin s1;
 int retour=-1;
 FILE*f;
 FILE*f1;
-f=fopen("admin.txt","r");
-f1=fopen("fichier.txt","a+");
-while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s \n",s1.login,s1.password,s1.nom,s1.prenom,&s1.dt_nais.jour,&s1.dt_nais.mois,&s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email,&s1.role)!=EOF)
+f=fopen("src/admin.txt","r");
+f1=fopen("src/fichier.txt","a+");
+while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %d \n",s1.login,s1.password,s1.nom,s1.prenom,&s1.dt_nais.jour,&s1.dt_nais.mois,&s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email,&s1.role)!=EOF)
 {
 if(strcmp(s1.login,s.login)==0)
 {
-fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,s1.role);
+fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s %d \n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,s1.role);
 retour=1;
 }
 else
 {
-fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s \n",s1.login,s1.password,s1.nom,s1.prenom,s1.dt_nais.jour,s1.dt_nais.mois,s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email,s1.role);
+fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s %d \n",s1.login,s1.password,s1.nom,s1.prenom,s1.dt_nais.jour,s1.dt_nais.mois,s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email,s1.role);
 }
 }
   fclose(f);
   fclose(f1);
-  remove("admin.txt");
-  rename("fichier.txt","admin.txt");
+  remove("src/admin.txt");
+  rename("src/fichier.txt","src/admin.txt");
 return(retour);
 }
 
@@ -190,7 +190,7 @@ enum
 	
 	store=gtk_list_store_new (COLUMNS, G_TYPE_STRING,  G_TYPE_STRING, G_TYPE_STRING);
 
-	f = fopen("admin.txt", "r");
+	f = fopen("src/admin.txt", "r");
 	
 	if(f==NULL)
 	{
@@ -199,8 +199,8 @@ enum
 	}		
 	else 
 
-	{ f = fopen("admin.txt", "a+");
-              while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,&s.role)!=EOF)
+	{ f = fopen("src/admin.txt", "a+");
+              while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %d \n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,&s.role)!=EOF)
 		{
 	gtk_list_store_append (store, &iter);
 	gtk_list_store_set (store, &iter, login, s.login, password, s.password, email, s.email, -1); 
@@ -267,7 +267,7 @@ enum
 	
 	store=gtk_list_store_new (COLUMNS, G_TYPE_STRING,  G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,  G_TYPE_STRING, G_TYPE_STRING);
 
-	f = fopen("adherant.txt", "r");
+	f = fopen("src/adherant.txt", "r");
 	
 	if(f==NULL)
 	{
@@ -276,7 +276,7 @@ enum
 	}		
 	else 
 
-	{ f = fopen("adherant.txt", "a+");
+	{ f = fopen("src/adherant.txt", "a+");
               while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %s %d\n",a.login,a.password,a.nom,a.prenom,&a.dt_nais.jour,&a.dt_nais.mois,&a.dt_nais.annee,a.sexe,a.adresse,a.phone,a.email,a.choixactiv,&a.valid)!=EOF)
 		{
 if(a.valid==0)
@@ -300,8 +300,8 @@ int valider=2;
 int retour=-1;
 FILE*f;
 FILE*f1;
-f=fopen("adherant.txt","r");
-f1=fopen("fichier.txt","a+");
+f=fopen("src/adherant.txt","r");
+f1=fopen("src/fichier.txt","a+");
 while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %s %d\n",a1.login,a1.password,a1.nom,a1.prenom,&a1.dt_nais.jour,&a1.dt_nais.mois,&a1.dt_nais.annee,a1.sexe,a1.adresse,a1.phone,a1.email,a1.choixactiv,&a1.valid)!=EOF)
 {
 if(strcmp(login,a1.login)==0)
@@ -317,9 +317,40 @@ fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s %s %d \n",a1.login,a1.password,a1.n
 }
   fclose(f);
   fclose(f1);
-  remove("adherant.txt");
-  rename("fichier.txt","adherant.txt");
+  remove("src/adherant.txt");
+  rename("src/fichier.txt","src/adherant.txt");
 return(retour);
+}
+////
+int verifier_number(char tmp[])
+{
+int isDigit1;
+int j;
+while(j<strlen(tmp)){
+  isDigit1 = isdigit(tmp[j]);
+  if (isDigit1 == 0) break;
+  j++;
+}
+return j;
+}
+///
+int validercin(char cin[])
+{
+
+if(validerchaine(cin)==1 && verifier_number(cin)==8)
+return 1;
+else 
+return 0;
+}
+///
+int validerchaine(char vchaine[])
+{
+int a=0;
+if((vchaine[0] != '\0'))
+a=1;
+else 
+a=0;
+return a;
 }
 
 

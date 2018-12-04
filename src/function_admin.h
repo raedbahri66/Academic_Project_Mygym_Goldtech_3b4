@@ -43,3 +43,6 @@ void afficher_admin(GtkWidget *liste);
 void afficher_demandes(GtkWidget *liste);
 int accepter(char login[]);
 void memoriser(char login[]);
+int verifier_number(char tmp[]);
+int validercin(char cin[]);
+int validerchaine(char vchaine[]);

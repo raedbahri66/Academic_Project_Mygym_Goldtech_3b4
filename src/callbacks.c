@@ -23,7 +23,7 @@ GtkWidget *nom;
 GtkWidget *prenom;
 GtkWidget *tel;
 GtkWidget *adresse;
-GtkWidget *mail;
+GtkWidget *mail,*output;
  
 Date dt_nais;
 admin s;
@@ -41,6 +41,8 @@ tel=lookup_widget(objet_graphique, "entry22");
 adresse=lookup_widget(objet_graphique, "entry21");
 mail=lookup_widget(objet_graphique, "entry25");
 
+output=lookup_widget(objet_graphique, "label613");
+
 s.dt_nais.jour=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (jour));
 s.dt_nais.mois=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (mois));
 s.dt_nais.annee=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (annees));
@@ -52,7 +54,12 @@ strcpy(s.phone,gtk_entry_get_text(GTK_ENTRY(tel)));
 strcpy(s.adresse,gtk_entry_get_text(GTK_ENTRY(adresse)));
 strcpy(s.email,gtk_entry_get_text(GTK_ENTRY(mail)));
 strcpy(s.sexe,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox6)));
+if(validercin(s.login)==1)
+{
+gtk_label_set_text(GTK_LABEL(output),"Correct");
 ajouter(s);
+}
+
 }
 
 
