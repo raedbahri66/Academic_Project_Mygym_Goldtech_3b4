@@ -79,11 +79,11 @@ FILE*f1;
 int test=-1;
 f=fopen("admin.txt","r");
 f1=fopen("fichier.txt","a+");
-while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email)!=EOF)
+while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %d\n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,&s.role)!=EOF)
 {
 if(strcmp(loginadmin,s.login)!=0)
 {
-fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email);
+fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s %d\n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,s.role);
 }
 else
 {
@@ -96,8 +96,27 @@ remove("admin.txt");
 rename("fichier.txt","admin.txt");
 return(test);
 }
+////////////////////////////////////////////////
+void memoriser(char login[])
+{
+int retour=-1;
+FILE*f;
+FILE*f1;
+f=fopen("login.txt","a+");
+f1=fopen("fichier.txt","a+");
+if (f1!=NULL)
+{
+fprintf(f1,"%s \n",login);
+fclose(f1);
+}
+  fclose(f);
 
+  remove("login.txt");
+  rename("fichier.txt","login.txt");
+return(retour);
+}
 
+////////////////////////////////////////
 int modifier(admin s)
 {
 admin s1;
@@ -106,16 +125,16 @@ FILE*f;
 FILE*f1;
 f=fopen("admin.txt","r");
 f1=fopen("fichier.txt","a+");
-while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s \n",s1.login,s1.password,s1.nom,s1.prenom,&s1.dt_nais.jour,&s1.dt_nais.mois,&s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email)!=EOF)
+while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s \n",s1.login,s1.password,s1.nom,s1.prenom,&s1.dt_nais.jour,&s1.dt_nais.mois,&s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email,&s1.role)!=EOF)
 {
 if(strcmp(s1.login,s.login)==0)
 {
-fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email);
+fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,s.dt_nais.jour,s.dt_nais.mois,s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,s1.role);
 retour=1;
 }
 else
 {
-fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s \n",s1.login,s1.password,s1.nom,s1.prenom,s1.dt_nais.jour,s1.dt_nais.mois,s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email);
+fprintf(f1,"%s %s %s %s %d %d %d %s %s %s %s \n",s1.login,s1.password,s1.nom,s1.prenom,s1.dt_nais.jour,s1.dt_nais.mois,s1.dt_nais.annee,s1.sexe,s1.adresse,s1.phone,s1.email,s1.role);
 }
 }
   fclose(f);
@@ -181,7 +200,7 @@ enum
 	else 
 
 	{ f = fopen("admin.txt", "a+");
-              while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email)!=EOF)
+              while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s \n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,&s.role)!=EOF)
 		{
 	gtk_list_store_append (store, &iter);
 	gtk_list_store_set (store, &iter, login, s.login, password, s.password, email, s.email, -1); 

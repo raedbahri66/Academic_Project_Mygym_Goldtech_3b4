@@ -81,3 +81,9 @@ on_button59_clicked                    (GtkWidget       *objet_graphique,
 void
 on_button60_clicked                    (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+
+
+void
+on_adherent1_activate_default          (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);

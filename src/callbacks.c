@@ -41,7 +41,6 @@ tel=lookup_widget(objet_graphique, "entry22");
 adresse=lookup_widget(objet_graphique, "entry21");
 mail=lookup_widget(objet_graphique, "entry25");
 
-
 s.dt_nais.jour=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (jour));
 s.dt_nais.mois=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (mois));
 s.dt_nais.annee=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (annees));
@@ -75,7 +74,7 @@ on_button33_clicked                    (GtkWidget       *objet_graphique,
 GtkWidget *xx; 
 int acc;
 char xxx[20];
-xx=lookup_widget(objet_graphique, "entry23");
+xx=lookup_widget(objet_graphique, "entry43");
 strcpy(xxx,gtk_entry_get_text(GTK_ENTRY(xx)));
 acc=supprimer(xxx);
 
@@ -173,15 +172,16 @@ void
 on_button45_clicked                    (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *input1,*input2,*window1,*admin,*adherent1,*medcin,*error,*adherantnotvalid;
-char login[20];char password[30];
-int z=9;
+
+GtkWidget *input1,*input2,*adherent11,*admin,*medcin,*error,*adherantnotvalid;
+char loginad[20];char password[30];
+int z=9;int aa=0;
 input1=lookup_widget(objet_graphique,"entry56");
 input2=lookup_widget(objet_graphique,"entry55");
-//window1=lookup_widget(objet_graphique,"window1");
-strcpy(login,gtk_entry_get_text(GTK_ENTRY(input1)));
+//adherent1=lookup_widget(objet_graphique,"adherent1");
+strcpy(loginad,gtk_entry_get_text(GTK_ENTRY(input1)));
 strcpy(password,gtk_entry_get_text(GTK_ENTRY(input2)));
-z=verifier(login,password);
+z=verifier(loginad,password);
 if(z==1)
 {
 admin= create_admin ();
@@ -190,28 +190,10 @@ gtk_widget_show(admin);
 else if(z==2)
 {
 
-GtkWidget *output,*output1,*output2;
-output=lookup_widget(objet_graphique,"label539");
-output1=lookup_widget(objet_graphique,"label540");
-output2=lookup_widget(objet_graphique,"label541");
-adherant a;
-FILE*f1;
-f1=fopen("adherant.txt","r");
- if (f1!=NULL)
- {
- while(fscanf(f1,"%s %s %s %s %d %d %d %s %s %s %s %s      %d\n",a.login,a.password,a.nom,a.prenom,&a.dt_nais.jour,&a.dt_nais.mois,&a.dt_nais.annee,a.sexe,a.adresse,a.phone,a.email,a.choixactiv,&a.valid)!=EOF)
- {
- if(strcmp(login,a.login)==0)
- {
- gtk_label_set_text(GTK_LABEL(output),a.prenom);
- gtk_label_set_text(GTK_LABEL(output1),a.nom);
- gtk_label_set_text(GTK_LABEL(output2),a.password);
+adherent11 = create_adherent1 ();
+gtk_widget_show (adherent11);
+memoriser(loginad);
 
-}
-}
-}
-adherent1= create_adherent1 ();
-gtk_widget_show(adherent1);
 }
 
 else if(z==0)
@@ -386,5 +368,44 @@ char accepter1[20];
 accept=lookup_widget(objet_graphique, "entry69");
 strcpy(accepter1,gtk_entry_get_text(GTK_ENTRY(accept)));
 done=accepter(accepter1);
+}
+
+
+
+
+void
+on_adherent1_activate_default          (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+char login[30];
+GtkWidget *output,*output1,*output2;
+output=lookup_widget(objet_graphique,"label539");
+output1=lookup_widget(objet_graphique,"label540");
+output2=lookup_widget(objet_graphique,"label541");
+adherant a;
+FILE*f1;
+FILE*f2;
+f1=fopen("adherant.txt","r");
+f2=fopen("login.txt","r");
+if (f2!=NULL)
+{
+ while(fscanf(f2,"%s\n",login)!=EOF)
+{
+ if (f1!=NULL)
+ {
+ while(fscanf(f1,"%s %s %s %s %d %d %d %s %s %s %s %s      %d\n",a.login,a.password,a.nom,a.prenom,&a.dt_nais.jour,&a.dt_nais.mois,&a.dt_nais.annee,a.sexe,a.adresse,a.phone,a.email,a.choixactiv,&a.valid)!=EOF)
+ {
+ if(strcmp(login,a.login)==0)
+ {
+
+ gtk_label_set_text(GTK_LABEL(output),a.prenom);
+ gtk_label_set_text(GTK_LABEL(output1),a.nom);
+ gtk_label_set_text(GTK_LABEL(output2),a.password);
+
+}
+}
+}
+}
+}
 }
 

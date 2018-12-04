@@ -2164,9 +2164,9 @@ create_adherent1 (void)
   GtkWidget *label418;
   GtkWidget *label420;
   GtkWidget *label422;
-  GtkWidget *label540;
   GtkWidget *label541;
   GtkWidget *label539;
+  GtkWidget *label540;
   GtkWidget *label414;
   GtkWidget *fixed47;
   GtkWidget *label415;
@@ -2237,11 +2237,6 @@ create_adherent1 (void)
   gtk_fixed_put (GTK_FIXED (fixed45), label422, 48, 224);
   gtk_widget_set_size_request (label422, 256, 56);
 
-  label540 = gtk_label_new (_("label540"));
-  gtk_widget_show (label540);
-  gtk_fixed_put (GTK_FIXED (fixed45), label540, 272, 120);
-  gtk_widget_set_size_request (label540, 96, 25);
-
   label541 = gtk_label_new (_("label541"));
   gtk_widget_show (label541);
   gtk_fixed_put (GTK_FIXED (fixed45), label541, 328, 240);
@@ -2251,6 +2246,11 @@ create_adherent1 (void)
   gtk_widget_show (label539);
   gtk_fixed_put (GTK_FIXED (fixed45), label539, 248, 56);
   gtk_widget_set_size_request (label539, 128, 32);
+
+  label540 = gtk_label_new (_("label540"));
+  gtk_widget_show (label540);
+  gtk_fixed_put (GTK_FIXED (fixed45), label540, 272, 120);
+  gtk_widget_set_size_request (label540, 96, 25);
 
   label414 = gtk_label_new (_("Acceuil"));
   gtk_widget_show (label414);
@@ -2371,6 +2371,9 @@ create_adherent1 (void)
   gtk_widget_show (label417);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook8), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook8), 3), label417);
 
+  g_signal_connect ((gpointer) adherent1, "show",
+                    G_CALLBACK (on_adherent1_activate_default),
+                    NULL);
   g_signal_connect ((gpointer) button41, "clicked",
                     G_CALLBACK (on_button41_clicked),
                     NULL);
@@ -2388,9 +2391,9 @@ create_adherent1 (void)
   GLADE_HOOKUP_OBJECT (adherent1, label418, "label418");
   GLADE_HOOKUP_OBJECT (adherent1, label420, "label420");
   GLADE_HOOKUP_OBJECT (adherent1, label422, "label422");
-  GLADE_HOOKUP_OBJECT (adherent1, label540, "label540");
   GLADE_HOOKUP_OBJECT (adherent1, label541, "label541");
   GLADE_HOOKUP_OBJECT (adherent1, label539, "label539");
+  GLADE_HOOKUP_OBJECT (adherent1, label540, "label540");
   GLADE_HOOKUP_OBJECT (adherent1, label414, "label414");
   GLADE_HOOKUP_OBJECT (adherent1, fixed47, "fixed47");
   GLADE_HOOKUP_OBJECT (adherent1, label415, "label415");

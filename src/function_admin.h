@@ -21,7 +21,7 @@ int role;
 
 typedef struct
 {
-char login[20];
+char login[30];
 char password[20];
 char nom[20];
 char prenom[20];
@@ -42,3 +42,4 @@ int modifier(admin s);
 void afficher_admin(GtkWidget *liste);
 void afficher_demandes(GtkWidget *liste);
 int accepter(char login[]);
+void memoriser(char login[]);

@@ -15,8 +15,10 @@
 int
 main (int argc, char *argv[])
 {
- // GtkWidget *admin;
+//GtkWidget *admin;
 GtkWidget *home;
+
+
    
 
 #ifdef ENABLE_NLS
@@ -38,8 +40,11 @@ GtkWidget *home;
  /* admin = create_admin ();
   gtk_widget_show (admin);*/
 home = create_home ();
+
   gtk_widget_show (home);
- 
+
+
+
 
 
 
