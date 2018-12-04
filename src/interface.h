@@ -8,3 +8,4 @@ GtkWidget* create_home (void);
 GtkWidget* create_adherantnotvalid (void);
 GtkWidget* create_error (void);
 GtkWidget* create_Coach (void);
+GtkWidget* create_Dieteticien (void);
