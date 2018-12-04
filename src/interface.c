@@ -2826,6 +2826,16 @@ create_Coach (void)
   GtkWidget *label556;
   GtkWidget *label558;
   GtkWidget *label546;
+  GtkWidget *button69;
+  GtkWidget *alignment2;
+  GtkWidget *hbox2;
+  GtkWidget *image2;
+  GtkWidget *label600;
+  GtkWidget *button68;
+  GtkWidget *alignment3;
+  GtkWidget *hbox3;
+  GtkWidget *image3;
+  GtkWidget *label601;
   GtkWidget *label542;
   GtkWidget *notebook12;
   GtkWidget *fixed70;
@@ -2852,6 +2862,10 @@ create_Coach (void)
   GtkObject *spinbutton46_adj;
   GtkWidget *spinbutton46;
   GtkWidget *button62;
+  GtkWidget *alignment1;
+  GtkWidget *hbox1;
+  GtkWidget *image1;
+  GtkWidget *label599;
   GtkWidget *label559;
   GtkWidget *fixed71;
   GtkWidget *fixed72;
@@ -2878,6 +2892,10 @@ create_Coach (void)
   GtkObject *spinbutton54_adj;
   GtkWidget *spinbutton54;
   GtkWidget *button63;
+  GtkWidget *alignment4;
+  GtkWidget *hbox4;
+  GtkWidget *image4;
+  GtkWidget *label602;
   GtkWidget *label560;
   GtkWidget *fixed73;
   GtkWidget *fixed74;
@@ -2891,12 +2909,24 @@ create_Coach (void)
   GtkObject *spinbutton57_adj;
   GtkWidget *spinbutton57;
   GtkWidget *button64;
+  GtkWidget *alignment5;
+  GtkWidget *hbox5;
+  GtkWidget *image5;
+  GtkWidget *label603;
   GtkWidget *label561;
   GtkWidget *label543;
   GtkWidget *fixed75;
   GtkWidget *treeview6;
   GtkWidget *button65;
+  GtkWidget *alignment6;
+  GtkWidget *hbox6;
+  GtkWidget *image6;
+  GtkWidget *label604;
   GtkWidget *button66;
+  GtkWidget *alignment7;
+  GtkWidget *hbox7;
+  GtkWidget *image7;
+  GtkWidget *label605;
   GtkWidget *label544;
   GtkWidget *fixed76;
   GtkWidget *label573;
@@ -2927,6 +2957,10 @@ create_Coach (void)
   GtkWidget *label597;
   GtkWidget *label598;
   GtkWidget *button67;
+  GtkWidget *alignment8;
+  GtkWidget *hbox8;
+  GtkWidget *image8;
+  GtkWidget *label606;
   GtkWidget *label545;
 
   Coach = gtk_window_new (GTK_WINDOW_TOPLEVEL);
@@ -3005,6 +3039,48 @@ create_Coach (void)
   gtk_widget_show (label546);
   gtk_fixed_put (GTK_FIXED (fixed69), label546, 144, 0);
   gtk_widget_set_size_request (label546, 504, 32);
+
+  button69 = gtk_button_new ();
+  gtk_widget_show (button69);
+  gtk_fixed_put (GTK_FIXED (fixed69), button69, 944, 0);
+  gtk_widget_set_size_request (button69, 72, 32);
+
+  alignment2 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment2);
+  gtk_container_add (GTK_CONTAINER (button69), alignment2);
+
+  hbox2 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox2);
+  gtk_container_add (GTK_CONTAINER (alignment2), hbox2);
+
+  image2 = gtk_image_new_from_stock ("gtk-cancel", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image2);
+  gtk_box_pack_start (GTK_BOX (hbox2), image2, FALSE, FALSE, 0);
+
+  label600 = gtk_label_new_with_mnemonic (_("Quit"));
+  gtk_widget_show (label600);
+  gtk_box_pack_start (GTK_BOX (hbox2), label600, FALSE, FALSE, 0);
+
+  button68 = gtk_button_new ();
+  gtk_widget_show (button68);
+  gtk_fixed_put (GTK_FIXED (fixed69), button68, 816, 0);
+  gtk_widget_set_size_request (button68, 120, 32);
+
+  alignment3 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment3);
+  gtk_container_add (GTK_CONTAINER (button68), alignment3);
+
+  hbox3 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox3);
+  gtk_container_add (GTK_CONTAINER (alignment3), hbox3);
+
+  image3 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image3);
+  gtk_box_pack_start (GTK_BOX (hbox3), image3, FALSE, FALSE, 0);
+
+  label601 = gtk_label_new_with_mnemonic (_("Deconnexion"));
+  gtk_widget_show (label601);
+  gtk_box_pack_start (GTK_BOX (hbox3), label601, FALSE, FALSE, 0);
 
   label542 = gtk_label_new (_("Accueil"));
   gtk_widget_show (label542);
@@ -3099,10 +3175,26 @@ create_Coach (void)
   gtk_fixed_put (GTK_FIXED (fixed70), spinbutton46, 280, 336);
   gtk_widget_set_size_request (spinbutton46, 60, 27);
 
-  button62 = gtk_button_new_with_mnemonic (_("+Ajouter"));
+  button62 = gtk_button_new ();
   gtk_widget_show (button62);
   gtk_fixed_put (GTK_FIXED (fixed70), button62, 208, 384);
-  gtk_widget_set_size_request (button62, 74, 29);
+  gtk_widget_set_size_request (button62, 96, 32);
+
+  alignment1 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment1);
+  gtk_container_add (GTK_CONTAINER (button62), alignment1);
+
+  hbox1 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox1);
+  gtk_container_add (GTK_CONTAINER (alignment1), hbox1);
+
+  image1 = gtk_image_new_from_stock ("gtk-add", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image1);
+  gtk_box_pack_start (GTK_BOX (hbox1), image1, FALSE, FALSE, 0);
+
+  label599 = gtk_label_new_with_mnemonic (_("Ajouter"));
+  gtk_widget_show (label599);
+  gtk_box_pack_start (GTK_BOX (hbox1), label599, FALSE, FALSE, 0);
 
   label559 = gtk_label_new (_("Ajouter"));
   gtk_widget_show (label559);
@@ -3115,6 +3207,7 @@ create_Coach (void)
   fixed72 = gtk_fixed_new ();
   gtk_widget_show (fixed72);
   gtk_fixed_put (GTK_FIXED (fixed71), fixed72, 0, 0);
+  gtk_widget_set_size_request (fixed72, 0, 0);
 
   calendar7 = gtk_calendar_new ();
   gtk_widget_show (calendar7);
@@ -3197,10 +3290,26 @@ create_Coach (void)
   gtk_fixed_put (GTK_FIXED (fixed72), spinbutton54, 280, 336);
   gtk_widget_set_size_request (spinbutton54, 60, 27);
 
-  button63 = gtk_button_new_with_mnemonic (_("Modifier"));
+  button63 = gtk_button_new ();
   gtk_widget_show (button63);
   gtk_fixed_put (GTK_FIXED (fixed72), button63, 208, 384);
-  gtk_widget_set_size_request (button63, 74, 29);
+  gtk_widget_set_size_request (button63, 104, 32);
+
+  alignment4 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment4);
+  gtk_container_add (GTK_CONTAINER (button63), alignment4);
+
+  hbox4 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox4);
+  gtk_container_add (GTK_CONTAINER (alignment4), hbox4);
+
+  image4 = gtk_image_new_from_stock ("gtk-edit", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image4);
+  gtk_box_pack_start (GTK_BOX (hbox4), image4, FALSE, FALSE, 0);
+
+  label602 = gtk_label_new_with_mnemonic (_("Modifier"));
+  gtk_widget_show (label602);
+  gtk_box_pack_start (GTK_BOX (hbox4), label602, FALSE, FALSE, 0);
 
   label560 = gtk_label_new (_("Modifier"));
   gtk_widget_show (label560);
@@ -3213,6 +3322,7 @@ create_Coach (void)
   fixed74 = gtk_fixed_new ();
   gtk_widget_show (fixed74);
   gtk_fixed_put (GTK_FIXED (fixed73), fixed74, 0, 0);
+  gtk_widget_set_size_request (fixed74, 0, 0);
 
   calendar8 = gtk_calendar_new ();
   gtk_widget_show (calendar8);
@@ -3250,10 +3360,26 @@ create_Coach (void)
   gtk_fixed_put (GTK_FIXED (fixed74), spinbutton57, 424, 256);
   gtk_widget_set_size_request (spinbutton57, 60, 27);
 
-  button64 = gtk_button_new_with_mnemonic (_("Supprimer"));
+  button64 = gtk_button_new ();
   gtk_widget_show (button64);
   gtk_fixed_put (GTK_FIXED (fixed74), button64, 232, 328);
-  gtk_widget_set_size_request (button64, 74, 29);
+  gtk_widget_set_size_request (button64, 104, 32);
+
+  alignment5 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment5);
+  gtk_container_add (GTK_CONTAINER (button64), alignment5);
+
+  hbox5 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox5);
+  gtk_container_add (GTK_CONTAINER (alignment5), hbox5);
+
+  image5 = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image5);
+  gtk_box_pack_start (GTK_BOX (hbox5), image5, FALSE, FALSE, 0);
+
+  label603 = gtk_label_new_with_mnemonic (_("Supprimer"));
+  gtk_widget_show (label603);
+  gtk_box_pack_start (GTK_BOX (hbox5), label603, FALSE, FALSE, 0);
 
   label561 = gtk_label_new (_("Supprimer"));
   gtk_widget_show (label561);
@@ -3272,15 +3398,47 @@ create_Coach (void)
   gtk_fixed_put (GTK_FIXED (fixed75), treeview6, 192, 56);
   gtk_widget_set_size_request (treeview6, 360, 224);
 
-  button65 = gtk_button_new_with_mnemonic (_("Accepter"));
+  button65 = gtk_button_new ();
   gtk_widget_show (button65);
   gtk_fixed_put (GTK_FIXED (fixed75), button65, 240, 312);
-  gtk_widget_set_size_request (button65, 74, 29);
+  gtk_widget_set_size_request (button65, 96, 32);
 
-  button66 = gtk_button_new_with_mnemonic (_("Refuser"));
+  alignment6 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment6);
+  gtk_container_add (GTK_CONTAINER (button65), alignment6);
+
+  hbox6 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox6);
+  gtk_container_add (GTK_CONTAINER (alignment6), hbox6);
+
+  image6 = gtk_image_new_from_stock ("gtk-apply", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image6);
+  gtk_box_pack_start (GTK_BOX (hbox6), image6, FALSE, FALSE, 0);
+
+  label604 = gtk_label_new_with_mnemonic (_("Accepter"));
+  gtk_widget_show (label604);
+  gtk_box_pack_start (GTK_BOX (hbox6), label604, FALSE, FALSE, 0);
+
+  button66 = gtk_button_new ();
   gtk_widget_show (button66);
   gtk_fixed_put (GTK_FIXED (fixed75), button66, 376, 312);
-  gtk_widget_set_size_request (button66, 74, 29);
+  gtk_widget_set_size_request (button66, 88, 32);
+
+  alignment7 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment7);
+  gtk_container_add (GTK_CONTAINER (button66), alignment7);
+
+  hbox7 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox7);
+  gtk_container_add (GTK_CONTAINER (alignment7), hbox7);
+
+  image7 = gtk_image_new_from_stock ("gtk-remove", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image7);
+  gtk_box_pack_start (GTK_BOX (hbox7), image7, FALSE, FALSE, 0);
+
+  label605 = gtk_label_new_with_mnemonic (_("Refuser"));
+  gtk_widget_show (label605);
+  gtk_box_pack_start (GTK_BOX (hbox7), label605, FALSE, FALSE, 0);
 
   label544 = gtk_label_new (_("Rendez-Vous"));
   gtk_widget_show (label544);
@@ -3426,10 +3584,26 @@ create_Coach (void)
   gtk_fixed_put (GTK_FIXED (fixed76), label598, 392, 416);
   gtk_widget_set_size_request (label598, 192, 24);
 
-  button67 = gtk_button_new_with_mnemonic (_("Rechercher"));
+  button67 = gtk_button_new ();
   gtk_widget_show (button67);
   gtk_fixed_put (GTK_FIXED (fixed76), button67, 704, 16);
   gtk_widget_set_size_request (button67, 120, 32);
+
+  alignment8 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment8);
+  gtk_container_add (GTK_CONTAINER (button67), alignment8);
+
+  hbox8 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox8);
+  gtk_container_add (GTK_CONTAINER (alignment8), hbox8);
+
+  image8 = gtk_image_new_from_stock ("gtk-find", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image8);
+  gtk_box_pack_start (GTK_BOX (hbox8), image8, FALSE, FALSE, 0);
+
+  label606 = gtk_label_new_with_mnemonic (_("Rechercher"));
+  gtk_widget_show (label606);
+  gtk_box_pack_start (GTK_BOX (hbox8), label606, FALSE, FALSE, 0);
 
   label545 = gtk_label_new (_("Fiche Medicale"));
   gtk_widget_show (label545);
@@ -3471,6 +3645,16 @@ create_Coach (void)
   GLADE_HOOKUP_OBJECT (Coach, label556, "label556");
   GLADE_HOOKUP_OBJECT (Coach, label558, "label558");
   GLADE_HOOKUP_OBJECT (Coach, label546, "label546");
+  GLADE_HOOKUP_OBJECT (Coach, button69, "button69");
+  GLADE_HOOKUP_OBJECT (Coach, alignment2, "alignment2");
+  GLADE_HOOKUP_OBJECT (Coach, hbox2, "hbox2");
+  GLADE_HOOKUP_OBJECT (Coach, image2, "image2");
+  GLADE_HOOKUP_OBJECT (Coach, label600, "label600");
+  GLADE_HOOKUP_OBJECT (Coach, button68, "button68");
+  GLADE_HOOKUP_OBJECT (Coach, alignment3, "alignment3");
+  GLADE_HOOKUP_OBJECT (Coach, hbox3, "hbox3");
+  GLADE_HOOKUP_OBJECT (Coach, image3, "image3");
+  GLADE_HOOKUP_OBJECT (Coach, label601, "label601");
   GLADE_HOOKUP_OBJECT (Coach, label542, "label542");
   GLADE_HOOKUP_OBJECT (Coach, notebook12, "notebook12");
   GLADE_HOOKUP_OBJECT (Coach, fixed70, "fixed70");
@@ -3489,6 +3673,10 @@ create_Coach (void)
   GLADE_HOOKUP_OBJECT (Coach, label565, "label565");
   GLADE_HOOKUP_OBJECT (Coach, spinbutton46, "spinbutton46");
   GLADE_HOOKUP_OBJECT (Coach, button62, "button62");
+  GLADE_HOOKUP_OBJECT (Coach, alignment1, "alignment1");
+  GLADE_HOOKUP_OBJECT (Coach, hbox1, "hbox1");
+  GLADE_HOOKUP_OBJECT (Coach, image1, "image1");
+  GLADE_HOOKUP_OBJECT (Coach, label599, "label599");
   GLADE_HOOKUP_OBJECT (Coach, label559, "label559");
   GLADE_HOOKUP_OBJECT (Coach, fixed71, "fixed71");
   GLADE_HOOKUP_OBJECT (Coach, fixed72, "fixed72");
@@ -3507,6 +3695,10 @@ create_Coach (void)
   GLADE_HOOKUP_OBJECT (Coach, label569, "label569");
   GLADE_HOOKUP_OBJECT (Coach, spinbutton54, "spinbutton54");
   GLADE_HOOKUP_OBJECT (Coach, button63, "button63");
+  GLADE_HOOKUP_OBJECT (Coach, alignment4, "alignment4");
+  GLADE_HOOKUP_OBJECT (Coach, hbox4, "hbox4");
+  GLADE_HOOKUP_OBJECT (Coach, image4, "image4");
+  GLADE_HOOKUP_OBJECT (Coach, label602, "label602");
   GLADE_HOOKUP_OBJECT (Coach, label560, "label560");
   GLADE_HOOKUP_OBJECT (Coach, fixed73, "fixed73");
   GLADE_HOOKUP_OBJECT (Coach, fixed74, "fixed74");
@@ -3517,12 +3709,24 @@ create_Coach (void)
   GLADE_HOOKUP_OBJECT (Coach, spinbutton56, "spinbutton56");
   GLADE_HOOKUP_OBJECT (Coach, spinbutton57, "spinbutton57");
   GLADE_HOOKUP_OBJECT (Coach, button64, "button64");
+  GLADE_HOOKUP_OBJECT (Coach, alignment5, "alignment5");
+  GLADE_HOOKUP_OBJECT (Coach, hbox5, "hbox5");
+  GLADE_HOOKUP_OBJECT (Coach, image5, "image5");
+  GLADE_HOOKUP_OBJECT (Coach, label603, "label603");
   GLADE_HOOKUP_OBJECT (Coach, label561, "label561");
   GLADE_HOOKUP_OBJECT (Coach, label543, "label543");
   GLADE_HOOKUP_OBJECT (Coach, fixed75, "fixed75");
   GLADE_HOOKUP_OBJECT (Coach, treeview6, "treeview6");
   GLADE_HOOKUP_OBJECT (Coach, button65, "button65");
+  GLADE_HOOKUP_OBJECT (Coach, alignment6, "alignment6");
+  GLADE_HOOKUP_OBJECT (Coach, hbox6, "hbox6");
+  GLADE_HOOKUP_OBJECT (Coach, image6, "image6");
+  GLADE_HOOKUP_OBJECT (Coach, label604, "label604");
   GLADE_HOOKUP_OBJECT (Coach, button66, "button66");
+  GLADE_HOOKUP_OBJECT (Coach, alignment7, "alignment7");
+  GLADE_HOOKUP_OBJECT (Coach, hbox7, "hbox7");
+  GLADE_HOOKUP_OBJECT (Coach, image7, "image7");
+  GLADE_HOOKUP_OBJECT (Coach, label605, "label605");
   GLADE_HOOKUP_OBJECT (Coach, label544, "label544");
   GLADE_HOOKUP_OBJECT (Coach, fixed76, "fixed76");
   GLADE_HOOKUP_OBJECT (Coach, label573, "label573");
@@ -3553,6 +3757,10 @@ create_Coach (void)
   GLADE_HOOKUP_OBJECT (Coach, label597, "label597");
   GLADE_HOOKUP_OBJECT (Coach, label598, "label598");
   GLADE_HOOKUP_OBJECT (Coach, button67, "button67");
+  GLADE_HOOKUP_OBJECT (Coach, alignment8, "alignment8");
+  GLADE_HOOKUP_OBJECT (Coach, hbox8, "hbox8");
+  GLADE_HOOKUP_OBJECT (Coach, image8, "image8");
+  GLADE_HOOKUP_OBJECT (Coach, label606, "label606");
   GLADE_HOOKUP_OBJECT (Coach, label545, "label545");
 
   return Coach;
