@@ -25,7 +25,7 @@ GtkWidget *prenom;
 GtkWidget *tel;
 GtkWidget *adresse;
 GtkWidget *mail,*output;
- 
+int a=0; 
 Date dt_nais;
 admin s;
 s.role=1;
@@ -55,11 +55,15 @@ strcpy(s.phone,gtk_entry_get_text(GTK_ENTRY(tel)));
 strcpy(s.adresse,gtk_entry_get_text(GTK_ENTRY(adresse)));
 strcpy(s.email,gtk_entry_get_text(GTK_ENTRY(mail)));
 strcpy(s.sexe,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox6)));
-if(validercin(s.login)==1)
+a=raedcin(s.login);
+
+if(a==0)
 {
 gtk_label_set_text(GTK_LABEL(output),"Correct");
 ajouter(s);
 }
+if(a==1)
+gtk_label_set_text(GTK_LABEL(output),"Données inv-alide");
 
 }
 

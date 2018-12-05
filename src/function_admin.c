@@ -353,5 +353,43 @@ a=0;
 return a;
 }
 
+///
+int verifier_email(char email[])
+{
+int a=0;
+int j;
+for(j=0;j<strlen(email);j++)
+{
+if((email[j] == '@'))
+  a=1;
+else
+  a=0;
+}
+return a;
+}
+///
 
+///////
+int raedcin(char loginadmin1[])
+{
+admin s;
+FILE*f;
+
+int test=-1;
+f=fopen("src/admin.txt","r");
+
+while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %d \n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,&s.role)!=EOF)
+{
+if(strcmp(loginadmin1,s.login)==0)
+{
+test=1;
+}
+else
+{
+test=0;
+}
+fclose(f);
+}
+return(test);
+}
 

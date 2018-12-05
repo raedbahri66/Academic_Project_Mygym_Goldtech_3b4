@@ -537,8 +537,34 @@ Femme</property>
 			      <signal name="clicked" handler="on_button25_clicked" last_modification_time="Mon, 26 Nov 2018 21:03:09 GMT"/>
 			    </widget>
 			    <packing>
-			      <property name="x">448</property>
-			      <property name="y">96</property>
+			      <property name="x">576</property>
+			      <property name="y">88</property>
+			    </packing>
+			  </child>
+
+			  <child>
+			    <widget class="GtkLabel" id="label613">
+			      <property name="width_request">152</property>
+			      <property name="height_request">24</property>
+			      <property name="visible">True</property>
+			      <property name="label" translatable="yes">Données invalide</property>
+			      <property name="use_underline">False</property>
+			      <property name="use_markup">False</property>
+			      <property name="justify">GTK_JUSTIFY_LEFT</property>
+			      <property name="wrap">False</property>
+			      <property name="selectable">False</property>
+			      <property name="xalign">0.5</property>
+			      <property name="yalign">0.5</property>
+			      <property name="xpad">0</property>
+			      <property name="ypad">0</property>
+			      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			      <property name="width_chars">-1</property>
+			      <property name="single_line_mode">False</property>
+			      <property name="angle">0</property>
+			    </widget>
+			    <packing>
+			      <property name="x">336</property>
+			      <property name="y">88</property>
 			    </packing>
 			  </child>
 			</widget>
@@ -6496,8 +6522,8 @@ choix 3</property>
 
 	      <child>
 		<widget class="GtkTreeView" id="treeview7">
-		  <property name="width_request">300</property>
-		  <property name="height_request">200</property>
+		  <property name="width_request">448</property>
+		  <property name="height_request">280</property>
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="headers_visible">True</property>
@@ -6509,15 +6535,15 @@ choix 3</property>
 		  <property name="hover_expand">False</property>
 		</widget>
 		<packing>
-		  <property name="x">48</property>
-		  <property name="y">88</property>
+		  <property name="x">24</property>
+		  <property name="y">16</property>
 		</packing>
 	      </child>
 
 	      <child>
 		<widget class="GtkTreeView" id="treeview8">
-		  <property name="width_request">300</property>
-		  <property name="height_request">200</property>
+		  <property name="width_request">480</property>
+		  <property name="height_request">280</property>
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="headers_visible">True</property>
@@ -6529,8 +6555,25 @@ choix 3</property>
 		  <property name="hover_expand">False</property>
 		</widget>
 		<packing>
-		  <property name="x">576</property>
-		  <property name="y">80</property>
+		  <property name="x">504</property>
+		  <property name="y">16</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkButton" id="button71">
+		  <property name="width_request">128</property>
+		  <property name="height_request">48</property>
+		  <property name="visible">True</property>
+		  <property name="can_focus">True</property>
+		  <property name="label" translatable="yes">Afficher</property>
+		  <property name="use_underline">True</property>
+		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
+		</widget>
+		<packing>
+		  <property name="x">384</property>
+		  <property name="y">328</property>
 		</packing>
 	      </child>
 	    </widget>

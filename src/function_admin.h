@@ -46,3 +46,5 @@ void memoriser(char login[]);
 int verifier_number(char tmp[]);
 int validercin(char cin[]);
 int validerchaine(char vchaine[]);
+int verifier_email(char email[]);
+int raedcin(char loginadmin1[]);
