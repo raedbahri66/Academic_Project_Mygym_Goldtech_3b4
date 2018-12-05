@@ -502,17 +502,34 @@ on_button70_clicked                      (GtkWidget       *objet_graphique,
 GtkWidget *nom;
 GtkWidget *prenom;
 GtkWidget *tel;
+
+GtkWidget *output,*output1,*output2,*output3;
 int mod_adher;
-adherant a1;
+adherant a;
+char login[20];
+
+output=lookup_widget(objet_graphique,"label539");
+output1=lookup_widget(objet_graphique,"label540");
+output2=lookup_widget(objet_graphique,"label612");
+output3=lookup_widget(objet_graphique,"label608");
 
 nom=lookup_widget(objet_graphique,"entry71");
 prenom=lookup_widget(objet_graphique,"entry72");
 tel=lookup_widget(objet_graphique,"entry73");
 
-strcpy(a1.nom,gtk_entry_get_text(GTK_ENTRY(nom)));
-strcpy(a1.prenom,gtk_entry_get_text(GTK_ENTRY(prenom)));
-strcpy(a1.phone,gtk_entry_get_text(GTK_ENTRY(tel)));
-mod_adher=modifier_adherent(a1.nom,a1.prenom,a1.phone);
+strcpy(a.nom,gtk_entry_get_text(GTK_ENTRY(nom)));
+strcpy(a.prenom,gtk_entry_get_text(GTK_ENTRY(prenom)));
+strcpy(a.phone,gtk_entry_get_text(GTK_ENTRY(tel)));
+mod_adher=modifier_adherent(a.nom,a.prenom,a.phone);
+
+output=lookup_widget(objet_graphique,"label539");
+output1=lookup_widget(objet_graphique,"label540");
+output2=lookup_widget(objet_graphique,"label612");
+output3=lookup_widget(objet_graphique,"label608");
+gtk_label_set_text(GTK_LABEL(output),a.nom);
+gtk_label_set_text(GTK_LABEL(output1),a.prenom);
+gtk_label_set_text(GTK_LABEL(output2),a.phone);
+
 }
 
 
