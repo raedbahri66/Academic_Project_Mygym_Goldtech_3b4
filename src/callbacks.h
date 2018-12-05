@@ -117,3 +117,8 @@ on_button70_clicked                       (GtkWidget       *objet_graphique,
                                           gpointer         user_data);
 
 
+
+
+void
+on_Dieteticien_show                    (GtkWidget       *objet_graphique,
+                                          gpointer         user_data);

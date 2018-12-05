@@ -11,7 +11,7 @@ FILE*f1;//coach
 FILE*f2;//adherant
 FILE*f3;//staffs medicaux
 
-int d=1,b=1,c=-1;
+int dd=1,b=1,c=-1;
 
 f=fopen("src/admin.txt","r");
 f1=fopen("src/adherant.txt","r");
@@ -19,13 +19,15 @@ f2=fopen("src/coach.txt","r");
 f3=fopen("src/staffs.txt","r");
 admin s;
 adherant a;
+dieteticien d;
+
 if(f !=NULL) {
 while(fscanf(f,"%s %s %s %s %d %d %d %s %s %s %s %d\n",s.login,s.password,s.nom,s.prenom,&s.dt_nais.jour,&s.dt_nais.mois,&s.dt_nais.annee,s.sexe,s.adresse,s.phone,s.email,&s.role)!=EOF)
 { //parcours du fichier admin
 
-d=strcmp(login,s.login);
+dd=strcmp(login,s.login);
 b=strcmp(password,s.password);
-if( d==0 && b==0)
+if( dd==0 && b==0)
 {
 c=s.role;
 }
@@ -35,14 +37,28 @@ if(f1 !=NULL) {
 while(fscanf(f1,"%s %s %s %s %d %d %d %s %s %s %s %s %d\n",a.login,a.password,a.nom,a.prenom,&a.dt_nais.jour,&a.dt_nais.mois,&a.dt_nais.annee,a.sexe,a.adresse,a.phone,a.email,a.choixactiv,&a.valid)!=EOF)
 { //parcours du fichier adherant
 
-d=strcmp(login,a.login);
+dd=strcmp(login,a.login);
 b=strcmp(password,a.password);
-if( d==0 && b==0)
+if( dd==0 && b==0)
 {
 c=a.valid;
 }
 }
 }
+
+if(f3 !=NULL) {
+while(fscanf(f3,"%s %s %s %s %d %d %d %s %s %s %s %d\n",d.login,d.password,d.nom,d.prenom,&d.dt_nais.jour,&d.dt_nais.mois,&d.dt_nais.annee,d.sexe,d.adresse,d.phone,d.email,&d.role)!=EOF)
+{ //parcours du fichier admin
+
+dd=strcmp(login,d.login);
+b=strcmp(password,d.password);
+if( dd==0 && b==0)
+{
+c=d.role;
+}
+}
+}
+
 return c;
 }
 

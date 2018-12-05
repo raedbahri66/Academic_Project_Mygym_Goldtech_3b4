@@ -21,6 +21,21 @@ int role;
 
 typedef struct
 {
+char login[20];
+char password[20];
+char nom[20];
+char prenom[20];
+Date dt_nais;
+char sexe[20];
+char adresse[20];
+char phone[20];
+char email[50];
+int role;
+}dieteticien;
+
+
+typedef struct
+{
 char login[30];
 char password[20];
 char nom[20];

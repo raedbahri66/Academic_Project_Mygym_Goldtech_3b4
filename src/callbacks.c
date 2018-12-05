@@ -212,7 +212,7 @@ on_button45_clicked                    (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
 
-GtkWidget *input1,*input2,*adherent11,*admin,*medcin,*error,*adherantnotvalid;
+GtkWidget *input1,*input2,*adherent11,*admin,*medcin,*error,*adherantnotvalid,*Dieteticien;
 char loginad[20];char password[30];
 int z=9;int aa=0;
 input1=lookup_widget(objet_graphique,"entry56");
@@ -231,6 +231,15 @@ else if(z==2)
 
 adherent11 = create_adherent1 ();
 gtk_widget_show (adherent11);
+memoriser(loginad);
+
+}
+
+else if(z==3)
+{
+
+Dieteticien = create_Dieteticien ();
+gtk_widget_show (Dieteticien);
 memoriser(loginad);
 
 }
@@ -546,4 +555,51 @@ gtk_label_set_text(GTK_LABEL(output2),a.phone);
 
 
 
+
+
+
+
+void
+on_Dieteticien_show                    (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+char login[30];
+GtkWidget *output,*output1,*output2,*output3,*output4,*output5;
+output=lookup_widget(objet_graphique,"label624");
+output1=lookup_widget(objet_graphique,"label625");
+output2=lookup_widget(objet_graphique,"label626");
+output3=lookup_widget(objet_graphique,"label627");
+output4=lookup_widget(objet_graphique,"label628");
+output5=lookup_widget(objet_graphique,"label629");
+dieteticien d;
+FILE*f1;
+FILE*f2;
+f1=fopen("src/staffs.txt","r");
+f2=fopen("src/login.txt","r");
+if (f2!=NULL)
+{
+ while(fscanf(f2,"%s\n",login)!=EOF)
+
+{
+if(f1!=NULL) 
+{
+while(fscanf(f1,"%s %s %s %s %d %d %d %s %s %s %s %d\n",d.login,d.password,d.nom,d.prenom,&d.dt_nais.jour,&d.dt_nais.mois,&d.dt_nais.annee,d.sexe,d.adresse,d.phone,d.email,&d.role)!=EOF)
+{
+ if(strcmp(login,d.login)==0)
+ {
+
+ gtk_label_set_text(GTK_LABEL(output),d.login);
+ gtk_label_set_text(GTK_LABEL(output1),d.nom);
+ gtk_label_set_text(GTK_LABEL(output2),d.prenom);
+ gtk_label_set_text(GTK_LABEL(output3),d.phone);
+ gtk_label_set_text(GTK_LABEL(output4),d.adresse);
+ gtk_label_set_text(GTK_LABEL(output5),d.email);
+ 
+
+}
+}
+}
+}
+}
+}
 

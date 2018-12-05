@@ -2172,11 +2172,11 @@ create_adherent1 (void)
   GtkWidget *entry73;
   GtkWidget *label612;
   GtkWidget *label611;
+  GtkWidget *button70;
   GtkWidget *label422;
+  GtkWidget *label610;
   GtkWidget *label541;
   GtkWidget *label609;
-  GtkWidget *label610;
-  GtkWidget *button70;
   GtkWidget *label414;
   GtkWidget *fixed47;
   GtkWidget *treeview7;
@@ -2290,10 +2290,20 @@ create_adherent1 (void)
   gtk_fixed_put (GTK_FIXED (fixed45), label611, 56, 184);
   gtk_widget_set_size_request (label611, 112, 16);
 
+  button70 = gtk_button_new_with_mnemonic (_("Modifier"));
+  gtk_widget_show (button70);
+  gtk_fixed_put (GTK_FIXED (fixed45), button70, 632, 208);
+  gtk_widget_set_size_request (button70, 74, 29);
+
   label422 = gtk_label_new (_("Date d' expiration de l' abonnement:"));
   gtk_widget_show (label422);
   gtk_fixed_put (GTK_FIXED (fixed45), label422, 48, 344);
   gtk_widget_set_size_request (label422, 264, 56);
+
+  label610 = gtk_label_new (_("Date d\303\251but de l' abonnement:"));
+  gtk_widget_show (label610);
+  gtk_fixed_put (GTK_FIXED (fixed45), label610, 24, 304);
+  gtk_widget_set_size_request (label610, 264, 56);
 
   label541 = gtk_label_new (_("label541"));
   gtk_widget_show (label541);
@@ -2304,16 +2314,6 @@ create_adherent1 (void)
   gtk_widget_show (label609);
   gtk_fixed_put (GTK_FIXED (fixed45), label609, 320, 312);
   gtk_widget_set_size_request (label609, 128, 32);
-
-  label610 = gtk_label_new (_("Date d\303\251but de l' abonnement:"));
-  gtk_widget_show (label610);
-  gtk_fixed_put (GTK_FIXED (fixed45), label610, 24, 304);
-  gtk_widget_set_size_request (label610, 264, 56);
-
-  button70 = gtk_button_new_with_mnemonic (_("Modifier"));
-  gtk_widget_show (button70);
-  gtk_fixed_put (GTK_FIXED (fixed45), button70, 632, 208);
-  gtk_widget_set_size_request (button70, 74, 29);
 
   label414 = gtk_label_new (_("Acceuil"));
   gtk_widget_show (label414);
@@ -2426,7 +2426,7 @@ create_adherent1 (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Nutritionniste"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Fitness"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Dance"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Cardio"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("cardio"));
 
   label416 = gtk_label_new (_("Agenda"));
   gtk_widget_show (label416);
@@ -2447,7 +2447,7 @@ create_adherent1 (void)
                     G_CALLBACK (on_button41_clicked),
                     NULL);
   g_signal_connect ((gpointer) button70, "clicked",
-                    G_CALLBACK (on_button70_clicked),
+                    G_CALLBACK (on_modifier1_clicked),
                     NULL);
   g_signal_connect ((gpointer) button43, "clicked",
                     G_CALLBACK (on_button43_clicked),
@@ -2471,11 +2471,11 @@ create_adherent1 (void)
   GLADE_HOOKUP_OBJECT (adherent1, entry73, "entry73");
   GLADE_HOOKUP_OBJECT (adherent1, label612, "label612");
   GLADE_HOOKUP_OBJECT (adherent1, label611, "label611");
+  GLADE_HOOKUP_OBJECT (adherent1, button70, "button70");
   GLADE_HOOKUP_OBJECT (adherent1, label422, "label422");
+  GLADE_HOOKUP_OBJECT (adherent1, label610, "label610");
   GLADE_HOOKUP_OBJECT (adherent1, label541, "label541");
   GLADE_HOOKUP_OBJECT (adherent1, label609, "label609");
-  GLADE_HOOKUP_OBJECT (adherent1, label610, "label610");
-  GLADE_HOOKUP_OBJECT (adherent1, button70, "button70");
   GLADE_HOOKUP_OBJECT (adherent1, label414, "label414");
   GLADE_HOOKUP_OBJECT (adherent1, fixed47, "fixed47");
   GLADE_HOOKUP_OBJECT (adherent1, treeview7, "treeview7");
@@ -3025,6 +3025,7 @@ create_Coach (void)
   GtkWidget *label584;
   GtkWidget *label585;
   GtkWidget *entry70;
+  GtkWidget *label586;
   GtkWidget *label587;
   GtkWidget *label588;
   GtkWidget *label589;
@@ -3600,6 +3601,11 @@ create_Coach (void)
   gtk_widget_set_size_request (entry70, 160, 27);
   gtk_entry_set_invisible_char (GTK_ENTRY (entry70), 8226);
 
+  label586 = gtk_label_new (_("label586"));
+  gtk_widget_show (label586);
+  gtk_fixed_put (GTK_FIXED (fixed76), label586, 8, 264);
+  gtk_widget_set_size_request (label586, 152, 24);
+
   label587 = gtk_label_new ("");
   gtk_widget_show (label587);
   gtk_fixed_put (GTK_FIXED (fixed76), label587, 424, 56);
@@ -3819,6 +3825,7 @@ create_Coach (void)
   GLADE_HOOKUP_OBJECT (Coach, label584, "label584");
   GLADE_HOOKUP_OBJECT (Coach, label585, "label585");
   GLADE_HOOKUP_OBJECT (Coach, entry70, "entry70");
+  GLADE_HOOKUP_OBJECT (Coach, label586, "label586");
   GLADE_HOOKUP_OBJECT (Coach, label587, "label587");
   GLADE_HOOKUP_OBJECT (Coach, label588, "label588");
   GLADE_HOOKUP_OBJECT (Coach, label589, "label589");
@@ -3849,17 +3856,17 @@ create_Dieteticien (void)
   GtkWidget *fixed77;
   GtkWidget *label617;
   GtkWidget *label621;
-  GtkWidget *label624;
-  GtkWidget *label626;
-  GtkWidget *label625;
-  GtkWidget *label627;
-  GtkWidget *label628;
-  GtkWidget *label629;
   GtkWidget *label619;
   GtkWidget *label620;
   GtkWidget *label618;
   GtkWidget *label622;
   GtkWidget *label623;
+  GtkWidget *label624;
+  GtkWidget *label627;
+  GtkWidget *label628;
+  GtkWidget *label629;
+  GtkWidget *label625;
+  GtkWidget *label626;
   GtkWidget *label613;
   GtkWidget *notebook14;
   GtkWidget *fixed78;
@@ -3990,36 +3997,6 @@ create_Dieteticien (void)
   gtk_fixed_put (GTK_FIXED (fixed77), label621, 40, 296);
   gtk_widget_set_size_request (label621, 120, 32);
 
-  label624 = gtk_label_new (_("label624"));
-  gtk_widget_show (label624);
-  gtk_fixed_put (GTK_FIXED (fixed77), label624, 168, 112);
-  gtk_widget_set_size_request (label624, 168, 32);
-
-  label626 = gtk_label_new (_("label624"));
-  gtk_widget_show (label626);
-  gtk_fixed_put (GTK_FIXED (fixed77), label626, 168, 176);
-  gtk_widget_set_size_request (label626, 168, 32);
-
-  label625 = gtk_label_new (_("label624"));
-  gtk_widget_show (label625);
-  gtk_fixed_put (GTK_FIXED (fixed77), label625, 168, 232);
-  gtk_widget_set_size_request (label625, 168, 32);
-
-  label627 = gtk_label_new (_("label624"));
-  gtk_widget_show (label627);
-  gtk_fixed_put (GTK_FIXED (fixed77), label627, 168, 296);
-  gtk_widget_set_size_request (label627, 168, 32);
-
-  label628 = gtk_label_new (_("label624"));
-  gtk_widget_show (label628);
-  gtk_fixed_put (GTK_FIXED (fixed77), label628, 168, 360);
-  gtk_widget_set_size_request (label628, 168, 32);
-
-  label629 = gtk_label_new (_("label624"));
-  gtk_widget_show (label629);
-  gtk_fixed_put (GTK_FIXED (fixed77), label629, 168, 424);
-  gtk_widget_set_size_request (label629, 168, 32);
-
   label619 = gtk_label_new (_("Nom :"));
   gtk_widget_show (label619);
   gtk_fixed_put (GTK_FIXED (fixed77), label619, 32, 176);
@@ -4044,6 +4021,36 @@ create_Dieteticien (void)
   gtk_widget_show (label623);
   gtk_fixed_put (GTK_FIXED (fixed77), label623, 40, 416);
   gtk_widget_set_size_request (label623, 112, 40);
+
+  label624 = gtk_label_new (_("label624"));
+  gtk_widget_show (label624);
+  gtk_fixed_put (GTK_FIXED (fixed77), label624, 168, 112);
+  gtk_widget_set_size_request (label624, 168, 32);
+
+  label627 = gtk_label_new (_("label624"));
+  gtk_widget_show (label627);
+  gtk_fixed_put (GTK_FIXED (fixed77), label627, 168, 296);
+  gtk_widget_set_size_request (label627, 168, 32);
+
+  label628 = gtk_label_new (_("label624"));
+  gtk_widget_show (label628);
+  gtk_fixed_put (GTK_FIXED (fixed77), label628, 168, 360);
+  gtk_widget_set_size_request (label628, 168, 32);
+
+  label629 = gtk_label_new (_("label624"));
+  gtk_widget_show (label629);
+  gtk_fixed_put (GTK_FIXED (fixed77), label629, 168, 424);
+  gtk_widget_set_size_request (label629, 168, 32);
+
+  label625 = gtk_label_new (_("label624"));
+  gtk_widget_show (label625);
+  gtk_fixed_put (GTK_FIXED (fixed77), label625, 168, 176);
+  gtk_widget_set_size_request (label625, 168, 32);
+
+  label626 = gtk_label_new (_("label624"));
+  gtk_widget_show (label626);
+  gtk_fixed_put (GTK_FIXED (fixed77), label626, 168, 232);
+  gtk_widget_set_size_request (label626, 168, 32);
 
   label613 = gtk_label_new (_("Acceuil"));
   gtk_widget_show (label613);
@@ -4501,23 +4508,27 @@ create_Dieteticien (void)
   gtk_widget_show (label616);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook13), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook13), 3), label616);
 
+  g_signal_connect ((gpointer) Dieteticien, "activate_default",
+                    G_CALLBACK (on_Dieteticien_activate_default),
+                    NULL);
+
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (Dieteticien, Dieteticien, "Dieteticien");
   GLADE_HOOKUP_OBJECT (Dieteticien, notebook13, "notebook13");
   GLADE_HOOKUP_OBJECT (Dieteticien, fixed77, "fixed77");
   GLADE_HOOKUP_OBJECT (Dieteticien, label617, "label617");
   GLADE_HOOKUP_OBJECT (Dieteticien, label621, "label621");
-  GLADE_HOOKUP_OBJECT (Dieteticien, label624, "label624");
-  GLADE_HOOKUP_OBJECT (Dieteticien, label626, "label626");
-  GLADE_HOOKUP_OBJECT (Dieteticien, label625, "label625");
-  GLADE_HOOKUP_OBJECT (Dieteticien, label627, "label627");
-  GLADE_HOOKUP_OBJECT (Dieteticien, label628, "label628");
-  GLADE_HOOKUP_OBJECT (Dieteticien, label629, "label629");
   GLADE_HOOKUP_OBJECT (Dieteticien, label619, "label619");
   GLADE_HOOKUP_OBJECT (Dieteticien, label620, "label620");
   GLADE_HOOKUP_OBJECT (Dieteticien, label618, "label618");
   GLADE_HOOKUP_OBJECT (Dieteticien, label622, "label622");
   GLADE_HOOKUP_OBJECT (Dieteticien, label623, "label623");
+  GLADE_HOOKUP_OBJECT (Dieteticien, label624, "label624");
+  GLADE_HOOKUP_OBJECT (Dieteticien, label627, "label627");
+  GLADE_HOOKUP_OBJECT (Dieteticien, label628, "label628");
+  GLADE_HOOKUP_OBJECT (Dieteticien, label629, "label629");
+  GLADE_HOOKUP_OBJECT (Dieteticien, label625, "label625");
+  GLADE_HOOKUP_OBJECT (Dieteticien, label626, "label626");
   GLADE_HOOKUP_OBJECT (Dieteticien, label613, "label613");
   GLADE_HOOKUP_OBJECT (Dieteticien, notebook14, "notebook14");
   GLADE_HOOKUP_OBJECT (Dieteticien, fixed78, "fixed78");

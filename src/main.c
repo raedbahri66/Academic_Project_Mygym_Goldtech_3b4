@@ -15,7 +15,7 @@
 int
 main (int argc, char *argv[])
 {
-//GtkWidget *admin;
+GtkWidget *Dieteticien;
 GtkWidget *home;
 
 
@@ -43,7 +43,8 @@ home = create_home ();
 
   gtk_widget_show (home);
 
-
+/*Dieteticien = create_Dieteticien ();
+gtk_widget_show (Dieteticien);*/
 
 
 
