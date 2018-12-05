@@ -31,7 +31,7 @@ on_button41_clicked                    (GtkButton       *button,
                                         gpointer         user_data);
 
 void
-on_button43_clicked                    (GtkButton       *button,
+on_button43_clicked                    (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
 
 void
@@ -111,3 +111,9 @@ on_button66_clicked                    (GtkButton       *button,
 void
 on_button67_clicked                    (GtkButton       *button,
                                         gpointer         user_data);
+
+void
+on_button70_clicked                       (GtkWidget       *objet_graphique,
+                                          gpointer         user_data);
+
+

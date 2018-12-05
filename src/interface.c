@@ -61,7 +61,6 @@ create_admin (void)
   GtkWidget *label87;
   GtkWidget *combobox6;
   GtkWidget *button25;
-  GtkWidget *label613;
   GtkWidget *label381;
   GtkWidget *fixed10;
   GtkWidget *entry49;
@@ -486,13 +485,8 @@ create_admin (void)
 
   button25 = gtk_button_new_with_mnemonic (_("+ Ajouter"));
   gtk_widget_show (button25);
-  gtk_fixed_put (GTK_FIXED (fixed31), button25, 576, 88);
+  gtk_fixed_put (GTK_FIXED (fixed31), button25, 448, 96);
   gtk_widget_set_size_request (button25, 80, 40);
-
-  label613 = gtk_label_new (_("Donn\303\251es invalide"));
-  gtk_widget_show (label613);
-  gtk_fixed_put (GTK_FIXED (fixed31), label613, 336, 88);
-  gtk_widget_set_size_request (label613, 152, 24);
 
   label381 = gtk_label_new (_("Ajouter"));
   gtk_widget_show (label381);
@@ -1895,7 +1889,6 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, label87, "label87");
   GLADE_HOOKUP_OBJECT (admin, combobox6, "combobox6");
   GLADE_HOOKUP_OBJECT (admin, button25, "button25");
-  GLADE_HOOKUP_OBJECT (admin, label613, "label613");
   GLADE_HOOKUP_OBJECT (admin, label381, "label381");
   GLADE_HOOKUP_OBJECT (admin, fixed10, "fixed10");
   GLADE_HOOKUP_OBJECT (admin, entry49, "entry49");
@@ -2179,16 +2172,15 @@ create_adherent1 (void)
   GtkWidget *entry73;
   GtkWidget *label612;
   GtkWidget *label611;
-  GtkWidget *button70;
   GtkWidget *label422;
-  GtkWidget *label610;
   GtkWidget *label541;
   GtkWidget *label609;
+  GtkWidget *label610;
+  GtkWidget *button70;
   GtkWidget *label414;
   GtkWidget *fixed47;
   GtkWidget *treeview7;
   GtkWidget *treeview8;
-  GtkWidget *button71;
   GtkWidget *label415;
   GtkWidget *fixed46;
   GtkWidget *calendar5;
@@ -2298,20 +2290,10 @@ create_adherent1 (void)
   gtk_fixed_put (GTK_FIXED (fixed45), label611, 56, 184);
   gtk_widget_set_size_request (label611, 112, 16);
 
-  button70 = gtk_button_new_with_mnemonic (_("Modifier"));
-  gtk_widget_show (button70);
-  gtk_fixed_put (GTK_FIXED (fixed45), button70, 632, 208);
-  gtk_widget_set_size_request (button70, 74, 29);
-
   label422 = gtk_label_new (_("Date d' expiration de l' abonnement:"));
   gtk_widget_show (label422);
   gtk_fixed_put (GTK_FIXED (fixed45), label422, 48, 344);
   gtk_widget_set_size_request (label422, 264, 56);
-
-  label610 = gtk_label_new (_("Date d\303\251but de l' abonnement:"));
-  gtk_widget_show (label610);
-  gtk_fixed_put (GTK_FIXED (fixed45), label610, 24, 304);
-  gtk_widget_set_size_request (label610, 264, 56);
 
   label541 = gtk_label_new (_("label541"));
   gtk_widget_show (label541);
@@ -2323,6 +2305,16 @@ create_adherent1 (void)
   gtk_fixed_put (GTK_FIXED (fixed45), label609, 320, 312);
   gtk_widget_set_size_request (label609, 128, 32);
 
+  label610 = gtk_label_new (_("Date d\303\251but de l' abonnement:"));
+  gtk_widget_show (label610);
+  gtk_fixed_put (GTK_FIXED (fixed45), label610, 24, 304);
+  gtk_widget_set_size_request (label610, 264, 56);
+
+  button70 = gtk_button_new_with_mnemonic (_("Modifier"));
+  gtk_widget_show (button70);
+  gtk_fixed_put (GTK_FIXED (fixed45), button70, 632, 208);
+  gtk_widget_set_size_request (button70, 74, 29);
+
   label414 = gtk_label_new (_("Acceuil"));
   gtk_widget_show (label414);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook8), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook8), 0), label414);
@@ -2333,18 +2325,13 @@ create_adherent1 (void)
 
   treeview7 = gtk_tree_view_new ();
   gtk_widget_show (treeview7);
-  gtk_fixed_put (GTK_FIXED (fixed47), treeview7, 24, 16);
-  gtk_widget_set_size_request (treeview7, 448, 280);
+  gtk_fixed_put (GTK_FIXED (fixed47), treeview7, 48, 88);
+  gtk_widget_set_size_request (treeview7, 300, 200);
 
   treeview8 = gtk_tree_view_new ();
   gtk_widget_show (treeview8);
-  gtk_fixed_put (GTK_FIXED (fixed47), treeview8, 504, 16);
-  gtk_widget_set_size_request (treeview8, 480, 280);
-
-  button71 = gtk_button_new_with_mnemonic (_("Afficher"));
-  gtk_widget_show (button71);
-  gtk_fixed_put (GTK_FIXED (fixed47), button71, 384, 328);
-  gtk_widget_set_size_request (button71, 128, 48);
+  gtk_fixed_put (GTK_FIXED (fixed47), treeview8, 576, 80);
+  gtk_widget_set_size_request (treeview8, 300, 200);
 
   label415 = gtk_label_new (_("Profil de staff"));
   gtk_widget_show (label415);
@@ -2439,7 +2426,7 @@ create_adherent1 (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Nutritionniste"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Fitness"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Dance"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("cardio"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Cardio"));
 
   label416 = gtk_label_new (_("Agenda"));
   gtk_widget_show (label416);
@@ -2460,7 +2447,7 @@ create_adherent1 (void)
                     G_CALLBACK (on_button41_clicked),
                     NULL);
   g_signal_connect ((gpointer) button70, "clicked",
-                    G_CALLBACK (on_modifier1_clicked),
+                    G_CALLBACK (on_button70_clicked),
                     NULL);
   g_signal_connect ((gpointer) button43, "clicked",
                     G_CALLBACK (on_button43_clicked),
@@ -2484,16 +2471,15 @@ create_adherent1 (void)
   GLADE_HOOKUP_OBJECT (adherent1, entry73, "entry73");
   GLADE_HOOKUP_OBJECT (adherent1, label612, "label612");
   GLADE_HOOKUP_OBJECT (adherent1, label611, "label611");
-  GLADE_HOOKUP_OBJECT (adherent1, button70, "button70");
   GLADE_HOOKUP_OBJECT (adherent1, label422, "label422");
-  GLADE_HOOKUP_OBJECT (adherent1, label610, "label610");
   GLADE_HOOKUP_OBJECT (adherent1, label541, "label541");
   GLADE_HOOKUP_OBJECT (adherent1, label609, "label609");
+  GLADE_HOOKUP_OBJECT (adherent1, label610, "label610");
+  GLADE_HOOKUP_OBJECT (adherent1, button70, "button70");
   GLADE_HOOKUP_OBJECT (adherent1, label414, "label414");
   GLADE_HOOKUP_OBJECT (adherent1, fixed47, "fixed47");
   GLADE_HOOKUP_OBJECT (adherent1, treeview7, "treeview7");
   GLADE_HOOKUP_OBJECT (adherent1, treeview8, "treeview8");
-  GLADE_HOOKUP_OBJECT (adherent1, button71, "button71");
   GLADE_HOOKUP_OBJECT (adherent1, label415, "label415");
   GLADE_HOOKUP_OBJECT (adherent1, fixed46, "fixed46");
   GLADE_HOOKUP_OBJECT (adherent1, calendar5, "calendar5");
@@ -3039,7 +3025,6 @@ create_Coach (void)
   GtkWidget *label584;
   GtkWidget *label585;
   GtkWidget *entry70;
-  GtkWidget *label586;
   GtkWidget *label587;
   GtkWidget *label588;
   GtkWidget *label589;
@@ -3615,11 +3600,6 @@ create_Coach (void)
   gtk_widget_set_size_request (entry70, 160, 27);
   gtk_entry_set_invisible_char (GTK_ENTRY (entry70), 8226);
 
-  label586 = gtk_label_new (_("label586"));
-  gtk_widget_show (label586);
-  gtk_fixed_put (GTK_FIXED (fixed76), label586, 8, 264);
-  gtk_widget_set_size_request (label586, 152, 24);
-
   label587 = gtk_label_new ("");
   gtk_widget_show (label587);
   gtk_fixed_put (GTK_FIXED (fixed76), label587, 424, 56);
@@ -3839,7 +3819,6 @@ create_Coach (void)
   GLADE_HOOKUP_OBJECT (Coach, label584, "label584");
   GLADE_HOOKUP_OBJECT (Coach, label585, "label585");
   GLADE_HOOKUP_OBJECT (Coach, entry70, "entry70");
-  GLADE_HOOKUP_OBJECT (Coach, label586, "label586");
   GLADE_HOOKUP_OBJECT (Coach, label587, "label587");
   GLADE_HOOKUP_OBJECT (Coach, label588, "label588");
   GLADE_HOOKUP_OBJECT (Coach, label589, "label589");
@@ -4260,6 +4239,7 @@ create_Dieteticien (void)
   fixed81 = gtk_fixed_new ();
   gtk_widget_show (fixed81);
   gtk_fixed_put (GTK_FIXED (fixed80), fixed81, 0, 0);
+  gtk_widget_set_size_request (fixed81, 0, 0);
 
   calendar12 = gtk_calendar_new ();
   gtk_widget_show (calendar12);

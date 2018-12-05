@@ -8,6 +8,7 @@
 #include "callbacks.h"
 #include <string.h>
 #include "function_admin.h"
+#include"fuctionadherent.h"
 
 void
 on_button25_clicked                    (GtkWidget       *objet_graphique,
@@ -168,9 +169,36 @@ on_button41_clicked                    (GtkButton       *button,
 
 
 void
-on_button43_clicked                    (GtkButton       *button,
+on_button43_clicked                    (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
+GtkWidget *combobox; 
+GtkWidget *jour; 
+GtkWidget *mois; 
+GtkWidget *annees;  
+GtkWidget *heure;
+GtkWidget *min;
+GtkWidget *sujet;
+GtkWidget *staff;
+rdv x;
+Date1 rdv;
+combobox=lookup_widget(objet_graphique, "comboboxentry1");
+
+jour=lookup_widget(objet_graphique, "spinbutton19");
+mois=lookup_widget(objet_graphique, "spinbutton20");
+annees=lookup_widget(objet_graphique, "spinbutton21");
+heure=lookup_widget(objet_graphique, "spinbutton22");
+min=lookup_widget(objet_graphique, "spinbutton23");
+sujet=lookup_widget(objet_graphique, "entry54");
+
+x.rdv.jour=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (jour));
+x.rdv.mois=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (mois));
+x.rdv.annee=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (annees));
+x.heure=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (heure));
+x.min=gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (min));
+strcpy(x.sujet,gtk_entry_get_text(GTK_ENTRY(sujet)));
+strcpy(x.staff,gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox)));
+agenda_adherent(x);
 
 }
 
@@ -385,15 +413,16 @@ on_adherent1_activate_default          (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
 char login[30];
-GtkWidget *output,*output1,*output2;
+GtkWidget *output,*output1,*output2,*output3;
 output=lookup_widget(objet_graphique,"label539");
 output1=lookup_widget(objet_graphique,"label540");
-output2=lookup_widget(objet_graphique,"label541");
+output2=lookup_widget(objet_graphique,"label612");
+output3=lookup_widget(objet_graphique,"label608");
 adherant a;
 FILE*f1;
 FILE*f2;
-f1=fopen("adherant.txt","r");
-f2=fopen("login.txt","r");
+f1=fopen("src/adherant.txt","r");
+f2=fopen("src/login.txt","r");
 if (f2!=NULL)
 {
  while(fscanf(f2,"%s\n",login)!=EOF)
@@ -407,7 +436,8 @@ if (f2!=NULL)
 
  gtk_label_set_text(GTK_LABEL(output),a.prenom);
  gtk_label_set_text(GTK_LABEL(output1),a.nom);
- gtk_label_set_text(GTK_LABEL(output2),a.password);
+ gtk_label_set_text(GTK_LABEL(output2),a.phone);
+ gtk_label_set_text(GTK_LABEL(output3),a.login);
 
 }
 }
@@ -463,4 +493,36 @@ on_button67_clicked                    (GtkButton       *button,
 {
 
 }
+
+
+void
+on_button70_clicked                      (GtkWidget       *objet_graphique,
+                                          gpointer         user_data)
+{
+GtkWidget *nom;
+GtkWidget *prenom;
+GtkWidget *tel;
+int mod_adher;
+adherant a1;
+
+nom=lookup_widget(objet_graphique,"entry71");
+prenom=lookup_widget(objet_graphique,"entry72");
+tel=lookup_widget(objet_graphique,"entry73");
+
+strcpy(a1.nom,gtk_entry_get_text(GTK_ENTRY(nom)));
+strcpy(a1.prenom,gtk_entry_get_text(GTK_ENTRY(prenom)));
+strcpy(a1.phone,gtk_entry_get_text(GTK_ENTRY(tel)));
+mod_adher=modifier_adherent(a1.nom,a1.prenom,a1.phone);
+}
+
+
+
+
+
+
+
+
+
+
+
 
